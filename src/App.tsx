@@ -6,13 +6,13 @@ import { Home } from "./_root/pages";
 
 const App = () => {
   return (
-    <main>
+    <main className="flex h-screen">
       <Routes>
         <Route element={<AuthLayout />}>
-          <Route path="sign-in" element={<SigninForm />} />
+          <Route path="sign-in" element={<SigninForm />} index />
           <Route path="sign-up" element={<SignupForm />} />
         </Route>
-        <Route index path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </main>
   );
