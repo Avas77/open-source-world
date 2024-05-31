@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -20,7 +21,9 @@ const SignupForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof SignupValidationSchema>) => {};
+  const onSubmit = (values: z.infer<typeof SignupValidationSchema>) => {
+    console.log({ values });
+  };
 
   return (
     <section className="flex-center flex-col sm:w-420">
@@ -36,7 +39,7 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="name" className="shad-input" {...field} />
+                  <Input className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
@@ -49,11 +52,7 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Username</FormLabel>
                 <FormControl>
-                  <Input
-                    className="shad-input"
-                    placeholder="username"
-                    {...field}
-                  />
+                  <Input className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
@@ -66,12 +65,7 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Email</FormLabel>
                 <FormControl>
-                  <Input
-                    placeholder="email"
-                    className="shad-input"
-                    {...field}
-                    type="email"
-                  />
+                  <Input className="shad-input" {...field} type="email" />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
@@ -84,17 +78,24 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Password</FormLabel>
                 <FormControl>
-                  <Input
-                    className="shad-input"
-                    placeholder="password"
-                    {...field}
-                    type="password"
-                  />
+                  <Input className="shad-input" {...field} type="password" />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
+          <Button className="shad-button_primary" type="submit">
+            Sign Up
+          </Button>
+          <p className="text-small-regular text-light-2 text-center mt-2">
+            Already have an account{" "}
+            <a
+              href="/sign-in"
+              className="text-primary-500 text-small-semibold ml-1"
+            >
+              Log In
+            </a>
+          </p>
         </form>
       </Form>
     </section>
