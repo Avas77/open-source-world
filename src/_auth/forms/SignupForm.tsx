@@ -39,6 +39,19 @@ const SignupForm = () => {
               </FormItem>
             )}
           />
+          <FormField
+            name="username"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username</FormLabel>
+                <FormControl>
+                  <Input placeholder="shadcn" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </form>
       </Form>
     </section>
