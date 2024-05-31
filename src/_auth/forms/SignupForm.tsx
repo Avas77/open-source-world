@@ -27,6 +27,11 @@ const SignupForm = () => {
 
   return (
     <section className="flex-center flex-col sm:w-420">
+      <img src="/assets/images/logo.svg" alt="Logo" />
+      <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Create a new Account</h2>
+      <p className="text-light-3 small-medium md:base-regular mt-2">
+        To use snapgram, please enter your details
+      </p>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
