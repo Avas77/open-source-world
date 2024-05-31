@@ -25,17 +25,20 @@ const SignupForm = () => {
   return (
     <section className="flex-center flex-col sm:w-420">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="w-full flex flex-col gap-5 mt-4"
+        >
           <FormField
             name="name"
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="shad-form_label">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input placeholder="name" className="shad-input" {...field} />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
@@ -44,11 +47,51 @@ const SignupForm = () => {
             control={form.control}
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Username</FormLabel>
+                <FormLabel className="shad-form_label">Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} />
+                  <Input
+                    className="shad-input"
+                    placeholder="username"
+                    {...field}
+                  />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="shad-form_message" />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="email"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="shad-form_label">Email</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="email"
+                    className="shad-input"
+                    {...field}
+                    type="email"
+                  />
+                </FormControl>
+                <FormMessage className="shad-form_message" />
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="password"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="shad-form_label">Password</FormLabel>
+                <FormControl>
+                  <Input
+                    className="shad-input"
+                    placeholder="password"
+                    {...field}
+                    type="password"
+                  />
+                </FormControl>
+                <FormMessage className="shad-form_message" />
               </FormItem>
             )}
           />
