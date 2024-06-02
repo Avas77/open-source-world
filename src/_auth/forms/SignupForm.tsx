@@ -8,6 +8,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { createUserAccount } from "@/lib/appwrite/api";
 import { SignupValidationSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -21,8 +22,9 @@ const SignupForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof SignupValidationSchema>) => {
-    console.log({ values });
+  const onSubmit = async (values: z.infer<typeof SignupValidationSchema>) => {
+    const newUser = await createUserAccount(values);
+    console.log({ newUser });
   };
 
   return (
